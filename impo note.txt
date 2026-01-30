@@ -10,4 +10,154 @@ git remote add origin https://github.com/Aime2k2/My_Data_engneering_repo.git
 git remote add origin https://github.com/Aime2k2/My_Data_engneering_repo.git
 git branch -M main
 
-venv\Scripts\Activate.ps1
+
+setting vscode in remote signed
+
+
+
+my_venv\Scripts\Activate.ps1
+
+
+
+
+8️⃣ HTTP Status Codes (VERY IMPORTANT)
+Code	Meaning
+200	Success
+201	Created
+400	Bad request
+401	Unauthorized (bad API key)
+403	Forbidden
+404	Not found
+500	Server error
+
+
+
+How Developers Handle API Limits
+✅ 1. Reduce requests
+
+Request only needed fields
+
+Use batch endpoints
+
+✅ 2. Cache results
+
+Store API responses locally:
+
+Database
+
+File (JSON/CSV)
+
+✅ 3. Use pagination smartly
+
+Stop when enough data is collected.
+
+✅ 4. Handle errors properly
+if response.status_code == 429:
+    time.sleep(60)
+
+✅ 5. Monitor usage
+
+Most APIs provide dashboards.
+
+🚫 What Happens If You Ignore Limits?
+
+Requests start failing
+
+API key suspended
+
+Account blocked
+
+Unexpected costs
+
+⭐ Beginner Golden Rules
+
+✔ Read the API docs
+✔ Track quotas
+✔ Use .env for keys
+✔ Handle errors
+✔ Cache data
+
+🎯 For Your Learning Path
+
+Since you’re learning APIs + YouTube, next I recommend:
+
+Quota-friendly YouTube requests
+
+Pagination (plitting large amounts of data into smaller pages instead of sending everything at once) handling
+
+Retry & backoff strategies
+
+Saving API data to CSV / DB
+
+
+
+LINK FOR GOOD PROJECTS
+https://github.com/studywolf/blog/blob/master/tensorflow_models/npg_cartpole/policy_gradient.py
+
+
+
+way forward:
+- create github repo for the project.(.gitignore used to ignore unneded file (created  environment), hide .env which contains sensitive info  )
+- python scripts for data extruction.
+-Docker folder uder it we put postgres as sub folder then we save in it (init-multiple-database.sh fr initiating multiple database)
+-Docker(dockerfile(for installation of specific version of Airflow and python ) )
+
+When a container runs:
+Image → provides the app & environment
+Volume → stores the data the app creates
+
+-docker compose yaml file used to define and run multiple data base
+ 
+ - create Airflow Dag that will  execute the code (this is usually transformig python code into the way that airflow can understand 
+ adding dechorator like @task(for every defined function). here you from (airflow.decorators import task, & from airflow.models import Variable))
+
+
+
+
+folder we needs to create
+dags(where we write Dag python code)
+logs (logs for task executions)  --not used 
+config(customising custom configuration )-- not used
+plugins(sensors , customer plugins)
+tests(codes for functional test)
+data( json data)
+include( any aditional file dag can need)
+
+
+
+
+
+What is Apache Airflow?
+
+Apache Airflow is an open-source workflow orchestration tool.
+
+In simple terms:
+It lets you define tasks, decide the order they run, schedule them, and watch them execute.
+
+Think of Airflow as a conductor for data jobs — making sure everything runs at the right time and in the right order 🎼
+
+What problem does Airflow solve?
+
+Imagine you have this daily process:
+
+Pull data from an API
+
+Clean the data
+
+Load it into a database
+
+Run analytics
+
+Send a report
+
+
+
+IMPORTANT codes.
+*docker compose down :(for stoping the container), it is mainly used is you want to apply bigger change on 
+  your docker compose like adding or removing services or changes name volumes  and 
+  before switching off your laptop to avoid potential issues like port conflicts or network errors when starting them again.
+*docker compose up -d --build:( Rebuild the images, start all containers, 
+and keep them running in the background.Apply latest changes and run the app.)
+*code of going inside the airflow (docker exec -it airflow-scheduler bash)
+
+
